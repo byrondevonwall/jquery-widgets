@@ -2,19 +2,37 @@ $(function(){
   'use strict';
 
 
-$(".box1").keypress(function(){
+$("#list").keypress(function(){
 
   if( $(".box1").val() <= 1){
-    $("#list").append("<br><input type='text' value=''>");
+    $("#list").append("<br><input type='text' class='box2'>");
   }
-    console.log($(".box1").val())
+    console.log($(".box1").val());
 });
 
-// $(this).keydown(function(){
-//   console.log(this)
-//   if($(this).text.length > 0 && $(this).text.length <= 1){
-//     $("#list").append("<br><input type='text' value=''>");
-//   }
-// });
+$("#list").keypress(function(){
+
+  if( $(".box2").val() ){
+    $("#list").append("<br><input type='text' class='box2 '>");
+  }
 
 });
+
+
+
+// $(":input[value=''][value!='.']").attr('disabled', true);
+$( '#list:empty' ).remove();
+
+
+});
+
+
+
+
+// if($(".box2").text.length === 0){
+//   $(".box2").remove();
+// }
+
+// $("#list").filter(function(){
+//     return $.trim(this.innerHTML) === "&nbsp;"
+// }).remove();
