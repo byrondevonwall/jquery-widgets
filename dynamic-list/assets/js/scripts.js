@@ -2,26 +2,40 @@ $(function(){
   'use strict';
 
 
-$("#list").keypress(function(){
+$("#list").change(function(){
 
-  if( $(".box1").val() <= 1){
-    $("#list").append("<br><input type='text' class='box2'>");
-  }
-    console.log($(".box1").val());
-});
-
-$("#list").keypress(function(){
-
-  if( $(".box2").val() ){
-    $("#list").append("<br><input type='text' class='box2 '>");
+  if( $(".box1").text.length == true && $(".box1").text.length <= 1){
+    $("#list").append("<br><input type='text' class='box box2'>");
   }
 
+    console.log($(".box1").text.length);
 });
+
+$("#list").keyup(function(){
+  if ($(".box2").val() == false ){
+      $("input:last-child", this).remove();
+      console.log("bug")
+  }
+});
+
+// $("#list").keypress(function(){
+//   if(){
+//
+//   }
+// });
+
+// $("#list").keypress(function(){
+//
+//   if( $(".box2").val() ){
+//     $("#list").append("<br><input type='text' class='box2 '>");
+//   }
+//
+// });
 
 
 
 // $(":input[value=''][value!='.']").attr('disabled', true);
-$( '#list:empty' ).remove();
+// $( '#list:empty' ).remove();
 
 
 });
